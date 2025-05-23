@@ -1,0 +1,178 @@
+=============================
+Version 0.7.0 (20240327-)
+- DB改用hibernate方式連接
+=============================
+Version 0.6.21 (20231128-1d1a4a6)
+- 修正cvnCore.decrypt_AES
+=============================
+Version 0.6.20 (20231122-8cd4ce4)
+- 修正RSA key產生時的名稱無法變更問題
+=============================
+Version 0.6.19 (20230721-94688d9)
+- 更名為 HSMConnCache
+- 修正為 DB 無 MasterKey時，會有提示  
+=============================
+Version 0.6.18 (20230720-36fb53b) 
+- 增加 version
+- ADD HSMIPAddress
+=============================
+Version 0.6.17 (20230717-4fbcbb8) 
+
+- 額外增加去除HSM Plus mode的加解密API
+
+=============================
+Version 0.6.16 (20230716-c5c02ed) 
+
+- Add ECDH relay APIs. Should have to add regex filters for encPlainData and plainData for the actual need
+- ECDH classes removed due to no need
+
+=============================
+Version 0.6.15 (20230715-c5c02ed) 
+
+- 加解密函式加上HSM Plus mode支援
+- 清理部分無用comment
+
+=============================
+Version 0.6.14 (20230713-5354cf7) 
+
+- 修復非HSM plus mode下的HSM key使用錯誤問題
+- 無用comment刪除
+
+=============================
+Version 0.6.14 (20230713-) 
+
+- 修復新master key未加密就存入DB的問題
+- 簡易邏輯簡化
+
+=============================
+Version 0.6.13 (20230711-f892732) 
+
+- 修復讀取safeney keystore無key的錯誤
+
+=============================
+Version 0.6.12 (20230711-f87bee1) 
+
+- 修復產master key的錯誤
+
+=============================
+Version 0.6.11 (20230627-d4a1a4f) 
+- 加 Send2Remote
+- 資料庫決定 EsnSeq 長度
+- debug ESN + sessionId
+- + esn
+- userID(20)
+=============================
+Version 0.6.10 (20230606-bfa975e) 
+- 整理 POM
+=============================
+Version 0.6.9 (20230524-9326781)
+- 加 Send2Remote
+- 加 Send2PushServer
+- 移無用的 JsonSyntaxException
+=============================
+Version 0.6.8 (20230505-d9d3fe2)
+- 修正 CVN 加解密AES
+=============================
+Version 0.6.7 (20230505-532ff5b)
+- 加回應代碼 2310
+- 改 groupId
+=============================
+Version 0.6.6 (20230407-e8f8043)
+- Fix NoClassDefFoundError: com/alibaba/fastjson/JSONException
+- Set version to 0.6.6
+=============================
+Version 0.6.5 (20230330-c1b3bf5)
+- 移除機敏資訊 plainTxt:
+- 移多餘log
+- Set version to 0.6.5
+=============================
+Version 0.6.4 (20230330-82f2663)
+- 移除機敏資訊
+- 移無用回應代碼 0916
+- Set version to 0.6.4
+=============================
+Version 0.6.3 (20230222-9fdcdb4)
+- 移除 printStackTrace
+- Set version to 0.6.3
+=============================
+Version 0.6.2 (20230221-2d3451b)
+- 加 0960 到回應代碼表
+- Set version to 0.6.2
+=============================
+Version 0.6.1 (20230216-144845d)
+- SQL script 改大寫
+- Set version to 0.6.1
+=============================
+Version 0.6.0 (20230216-2ed6e75)
+- 依 COM FIDO 產品修改
+- new branch COM_RPnFIDO
+- Set version to 0.6.0
+=============================
+Version 0.5.5 (20221230-)
+
+- Adjust encrypt and decrypt function to use same way to fetch HSM key
+- Adjust logics that uses encrypt and decrypt function
+
+=============================
+Version 0.5.4 (20221230-ea2b945)
+
+- Will log version number into many major funcation log points
+
+=============================
+Version 0.5.4 (20221230-513408a)
+
+- Useless codes removed
+- Can use HSM plus mode when HSMProvider is set to SafeNet
+- Can use createKey_AES to create master key when HSMProvider is set to SafeNet
+
+=============================
+Version 0.5.3 (20221228-e58eca1)
+
+- Fixed the missing safenet provider issue
+- Fixed the IV invalid issue
+
+=============================
+Version 0.5.3 (20221228-07ada3e)
+
+- Able to set Safenet HSM slot id and password
+- Useless lib and code removed
+
+=============================
+Version 0.5.2 (20220926-041564f)
+
+- Update package name
+- Adjust pom to read libs from external
+- Adjust Cfg class to read config from given path
+- Will reply return code and msg when request for list channel
+- Add TS_MainFunc class for compact jar usages
+- Useless libs removed
+- Useless servlet class removed
+
+=============================
+Version 0.5.2 (20220104-0cee1fb)
+
+- Update to log4j 2.17.1
+
+=============================
+Version 0.5.2 (20211221-01e49d6)
+
+- Update to log4j 2.17.0
+- Update org.json
+
+=============================
+Version 0.5.2 (20211216-bbf65c3)
+
+- Update to log4j 2.16.0
+
+=============================
+Version 0.5.2 (20211214-c2b02c3)
+
+- Update to maven project
+- Update libs
+- Useless libs removed
+
+=============================
+Version 0.5.1 (20210608-87ca159)
+
+- Fixed a major bug that will cause OTP length not match the asked while generating
+- Useless codes removed

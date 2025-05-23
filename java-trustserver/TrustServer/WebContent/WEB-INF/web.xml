@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>TrustServer</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>WAR-Version</param-name>
+		<param-value>2.0.2.20210118</param-value>
+	</context-param>
+	<env-entry>
+		<description>External configuration file path.</description>
+		<env-entry-name>ExCfgPath</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+		<env-entry-value>E:/SK//TS_Conf/config.properties</env-entry-value>
+	</env-entry>
+	<env-entry>
+		<description>External log4j configuration file path.</description>
+		<env-entry-name>ExLog4jCfgPath</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+		<env-entry-value>E:/SK/TS_Conf/log4j.properties</env-entry-value>
+	</env-entry>
+
+</web-app>

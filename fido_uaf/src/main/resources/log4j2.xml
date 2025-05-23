@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ALL">
+	<Properties>
+		<Property name="Inbound_Log_INFO">/opt/fido/fido_log/Inbound</Property>
+		<Property name="AP_Log_INFO">/opt/fido/fido_log/AP</Property>
+		<Property name="SQL_Log_INFO">/opt/fido/fido_log/SQL</Property>
+		<Property name="WSM_Log_INFO">/opt/fido/fido_log/WSM</Property>
+	</Properties>
+	<Appenders>
+		<RollingFile name="Inbound_Log"
+			fileName="${Inbound_Log_INFO}/Inbound_Log.log"
+			filePattern="${Inbound_Log_INFO}/%d{yyyy-MM}/Inbound_Log.log.%d{yyyy-MM-dd}-%i.zip">
+			<PatternLayout>
+				<pattern>{\"timestamp\":\"%-d{yyyy-MM-dd'T'HH:mm:ss.SSS}\",\"application\":\"Control\",\"thread\":\"[%t]\",\"level\":\"%-5p\",\"log_type\":\"inbound\",\"span_id\":\"1\", %m%n
+				</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5">
+				<Delete basePath="${Inbound_Log_INFO}" maxDepth="2">
+					<IfFileName glob="Inbound_Log.*" />
+					<IfLastModified age="90d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+		<RollingFile name="AP_Log"
+			fileName="${AP_Log_INFO}/AP_Log.log"
+			filePattern="${AP_Log_INFO}/%d{yyyy-MM}/AP_Log.log.%d{yyyy-MM-dd}-%i.zip">
+			<PatternLayout>
+				<pattern>{\"timestamp\":\"%-d{yyyy-MM-dd'T'HH:mm:ss.SSS}\",\"application\":\"Control\",\"thread\":\"[%t]\",\"level\":\"%-5p\",\"log_type\":\"AP\",\"span_id\":\"1\", %m%n
+				</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5">
+				<Delete basePath="${AP_Log_INFO}" maxDepth="2">
+					<IfFileName glob="AP_Log.*" />
+					<IfLastModified age="90d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+		<RollingFile name="SQL_Log"
+			fileName="${SQL_Log_INFO}/SQL_Log.log"
+			filePattern="${SQL_Log_INFO}/%d{yyyy-MM}/SQL_Log.log.%d{yyyy-MM-dd}-%i.zip">
+			<PatternLayout>
+				<pattern>{\"timestamp\":\"%-d{yyyy-MM-dd'T'HH:mm:ss.SSS}\",\"application\":\"Control\",\"thread\":\"[%t]\",\"level\":\"%-5p\",\"log_type\":\"SQL\",\"span_id\":\"1\", %m%n
+				</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5">
+				<Delete basePath="${SQL_Log_INFO}" maxDepth="2">
+					<IfFileName glob="SQL_Log.*" />
+					<IfLastModified age="90d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+		<RollingFile name="WSM_Log"
+			fileName="${WSM_Log_INFO}/WSM_Log.log"
+			filePattern="${WSM_Log_INFO}/%d{yyyy-MM}/WSM_Log.log.%d{yyyy-MM-dd}-%i.zip">
+			<PatternLayout>
+				<pattern>%-d{yyyy-MM-dd HH:mm:ss,SSS} [Thread-%t][%-5p] %m%n
+				</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5">
+				<Delete basePath="${WSM_Log_INFO}" maxDepth="2">
+					<IfFileName glob="WSM_Log.*" />
+					<IfLastModified age="90d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+		<Console name="console_log" target="SYSTEM_OUT">
+			<!-- <PatternLayout -->
+			<!-- pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" /> -->
+			<PatternLayout
+				pattern="%style{%d{ISO8601}}{bright,green} %highlight{%-5level} [%style{%t}{bright,blue}] %style{%C{}.%M(%L)}{bright,yellow} : %msg%n%style{%throwable}{red}"
+				disableAnsi="false" noConsoleNoAnsi="false" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.toppanidgate.fidouaf.common.model.Log4jInbound" additivity="false">
+			<appender-ref ref="Inbound_Log" level="ALL" />
+		</Logger>
+		<Logger name="com.toppanidgate.fidouaf.common.model.Log4jAP" additivity="false">
+			<appender-ref ref="AP_Log" level="ALL" />
+		</Logger>
+		<Logger name="com.toppanidgate.fidouaf.common.model.Log4jSQL" additivity="false">
+			<appender-ref ref="SQL_Log" level="ALL" />
+		</Logger>
+		<Logger name="com.toppanidgate.fidouaf.Log4j" additivity="false">
+			<appender-ref ref="WSM_Log" level="debug" />
+		</Logger>
+		<Root level="ALL">
+			<AppenderRef ref="console_log" level="info" />
+		</Root>
+	</Loggers>
+</Configuration>

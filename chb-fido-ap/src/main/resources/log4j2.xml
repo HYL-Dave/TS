@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ALL" monitorInterval="30">
+	<Properties>
+		<Property name="log-path_WSM">D:/IDGFID/COM_FIDO/log/WSM</Property>
+		<Property name="log-path_WSI">D:/IDGFID/COM_FIDO/log/WSI</Property>
+		<Property name="log-path_AP">D:/IDGFID/COM_FIDO/log/AP</Property>
+		<Property name="log-path_SQL">D:/IDGFID/COM_FIDO/log/SQL</Property>
+		<Property name="log-path_Inbound">D:/IDGFID/COM_FIDO/log/Inbound</Property>
+	</Properties>
+	<Appenders>
+		<RollingFile name="WSM-log"
+			fileName="${log-path_WSM}/WSM.log"
+			filePattern="${log-path_WSM}/%d{yyyy-MM}/WSM.%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout>
+				<pattern>%-d{yyyy-MM-dd HH:mm:ss,SSS} [%t][%-5p] %m%n
+				</pattern>				
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="200 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5">
+				<Delete basePath="${log-path_WSM}" maxDepth="2">
+					<IfFileName glob="WSM. *" />
+					<IfLastModified age="90d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+		<RollingFile name="WSI-log"
+			fileName="${log-path_WSI}/WSI_Log.log"
+			filePattern="${log-path_WSI}/%d{yyyy-MM}/WSI_Log.%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout>
+				<pattern>%-d{yyyy-MM-dd HH:mm:ss,SSS} [%t][%-5p] %m%n
+				</pattern>	
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="200 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5">
+				<Delete basePath="${log-path_WSI}" maxDepth="2">
+					<IfFileName glob="WSI. *" />
+					<IfLastModified age="90d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+		<RollingFile name="AP-log"
+			fileName="${log-path_AP}/AP.log"
+			filePattern="${log-path_AP}/%d{yyyy-MM}/AP.%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout>
+				<pattern>{\"timestamp\":\"%-d{yyyy-MM-dd'T'HH:mm:ss.SSS}\",\"application\":\"Control\",\"thread\":\"[%t]\",\"level\":\"%-5p\",\"log_type\":\"AP\",\"span_id\":\"1\", %m%n
+				</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="200 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5">
+				<Delete basePath="${log-path_AP}" maxDepth="2">
+					<IfFileName glob="AP. *" />
+					<IfLastModified age="90d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+		<RollingFile name="SQL-log"
+			fileName="${log-path_SQL}/SQL.log"
+			filePattern="${log-path_SQL}/%d{yyyy-MM}/SQL.%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout>
+				<pattern>{\"timestamp\":\"%-d{yyyy-MM-dd'T'HH:mm:ss.SSS}\",\"application\":\"Control\",\"thread\":\"[%t]\",\"level\":\"%-5p\",\"log_type\":\"SQL\",\"span_id\":\"1\", %m%n
+				</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="200 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5">
+				<Delete basePath="${log-path_SQL}" maxDepth="2">
+					<IfFileName glob="SQL. *" />
+					<IfLastModified age="90d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+		<RollingFile name="Inbound-log"
+			fileName="${log-path_Inbound}/Inbound.log"
+			filePattern="${log-path_Inbound}/%d{yyyy-MM}/Inbound.%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout>
+				<pattern>{\"timestamp\":\"%-d{yyyy-MM-dd'T'HH:mm:ss.SSS}\",\"application\":\"Control\",\"thread\":\"[%t]\",\"level\":\"%-5p\",\"log_type\":\"inbound\",\"span_id\":\"1\", %m%n
+				</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="200 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5">
+				<Delete basePath="${log-path_Inbound}" maxDepth="2">
+					<IfFileName glob="Inbound. *" />
+					<IfLastModified age="90d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+		<Console name="console_log" target="SYSTEM_OUT">
+			<!-- <PatternLayout -->
+			<!-- pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" /> -->
+			<PatternLayout
+				pattern="%style{%d{ISO8601}}{bright,green} %highlight{%-5level} [%style{%t}{bright,blue}] %style{%C{}.%M(%L)}{bright,yellow} : %msg%n%style{%throwable}{red}"
+				disableAnsi="false" noConsoleNoAnsi="false" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.WSI.model.Log4jWSI" level="debug"
+			additivity="false">
+			<AppenderRef ref="WSI-log" level="ALL" />
+		</Logger>
+		<Logger name="com.toppanidgate.fidouaf.common.model.Log4j" level="debug"
+			additivity="false">
+			<appender-ref ref="WSM-log" level="ALL" />
+		</Logger>
+		<Logger name="com.toppanidgate.fidouaf.common.model.Log4jAP" level="debug"
+			additivity="false">
+			<AppenderRef ref="AP-log" level="ALL" />
+		</Logger>
+		<Logger name="com.toppanidgate.fidouaf.common.model.Log4jSQL" level="debug"
+			additivity="false">
+			<AppenderRef ref="SQL-log" level="ALL" />
+		</Logger>
+		<Logger name="com.toppanidgate.fidouaf.common.model.Log4jInbound" level="debug"
+			additivity="false">
+			<AppenderRef ref="Inbound-log" level="ALL" />
+		</Logger>
+		<Root level="info">
+			<AppenderRef ref="console_log" level="info" />
+		</Root>
+	</Loggers>
+</Configuration>

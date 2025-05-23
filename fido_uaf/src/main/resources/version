@@ -1,0 +1,53 @@
+---------------------------
+version 1.1.5 (20231030-)
+1. Update jasypt 3.0.5
+2. Set version 1.1.5
+---------------------------
+version 1.1.4 (20231030-0529f08)
+1. Bug and vulnerability has been fixed.
+2. Set version 1.1.4
+---------------------------
+version 1.1.3 (20231027-c39efaf)
+1. Fixed a bug that might not getting KeyID with sequence of id
+2. Set version 1.1.3
+---------------------------
+version 1.1.2 (20230109-136c78e)
+1. 改回 SK 的 ALP (body,message 為 JSONString)
+2. Set version 1.1.2
+---------------------------
+version 1.1.1 (20221208-b146977)
+1. Add Health check
+2. Set version 1.1.1
+---------------------------
+version 1.1.0 (20221201-b455ed8)
+1. 加註解
+2. 更名
+3. Set version 1.1.0
+---------------------------
+version 1.0.5 (20221116-16a268f)
+1. Change logException
+2. Fix SQLLogFormat
+3. 提示 *** TestMode
+4. Set version 1.0.5
+---------------------------
+version 1.0.4 (20221111-a9d7b63)
+1. Tune logException()
+2. Set version 1.0.4
+---------------------------
+version 1.0.3 (20221109-df4b038)
+1. Add TestMode
+2. Add logExecption to AP_Log
+3. Set version 1.0.3
+---------------------------
+version 1.0.2 (20221103-130e413)
+1.ALTER SCHEMA to fido
+2.只留 json 格式的 Log 
+---------------------------
+version 1.0.1 (20221026-6909fe4)
+1. remove Jasypt
+2. dataSource 遮罩改用 EncryptHelper.jar
+3. Allow_AAID 放設定檔  
+---------------------------
+version 1.0.0 (20221017-dd68986)
+1.移除多餘檔案
+2.修改路徑 basedirOfJAR For SIT  

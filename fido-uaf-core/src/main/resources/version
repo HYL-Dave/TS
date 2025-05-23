@@ -1,0 +1,24 @@
+---------------------------
+version 1.1.5 (20230609-)
+- Remove redundancy
+---------------------------
+version 1.1.4 (20230517-46190ef)
+- 設定參數名稱更名
+---------------------------
+version 1.1.3 (20230330-442e3d9)
+- Use apache.logging
+- Set version 1.1.3
+---------------------------
+version 1.1.2 (20221215-3951ef3)
+1. Remove test files
+2. Add spring-context
+3. Set version 1.1.2
+---------------------------
+version 1.1.1 (20221208-50ddccf)
+1. Add Health check
+2. Set version 1.1.1
+---------------------------
+version 1.1.0 (20221201-63bca99)
+1. 加註解
+2. 更名
+3. Set version 1.1.0

@@ -1,0 +1,864 @@
+=============================
+Version 2.2.13 (20231106-)
+- support multiprofile 2. fix bugs
+- 更改 version 為 2.2.13
+=============================
+Version 2.2.12 (20230721-b3d4841)
+- 更改 version 為 2.2.12
+=============================
+Version 2.2.11 (20230721-eb14609)
+- 補 ECDH*.java
+=============================
+Version 2.2.10 (20230720-fcd03de)
+- Add ECDH relay APIs
+=============================
+Version 2.2.9 (20230613-ec2572f)
+- WAR　2 JAR
+- Add actuator/info
+- Remove redundancy
+- info.app.version=2.2.9
+=============================
+Version 2.2.8 (20230531-53d7ee2)
+- JAR 2 WAR
+=============================
+Version 2.2.7 (20230524-6756fde)
+- 移無用的 JsonSyntaxException
+- 移無用的 dependency
+- 移多餘的 endpoint
+=============================
+Version 2.2.6 (20230523-8bb3d9b)
+- 檢核設定參數
+- 依 SonarQube 修改
+- Generate the OpenAPI 3 specification docs
+=============================
+Version 2.2.5 (20230518-4992136)
+- 設定參數名稱更名 
+=============================
+Version 2.2.4 (20230515-ef17754)
+- 修正 [問題]Idenkey 2.1.8_重複設定人臉/圖形鎖/動態密碼最後會出現資料庫錯誤
+=============================
+Version 2.2.3 (20230511-dc62dd1)
+- 修正 channel 預設值
+- Fix bug
+- 修正 黑名單 authType = ALL(包含交易等全部時機)
+- 成功加新帳號後再註銷 
+=============================
+Version 2.2.2 (20230510-0952c6b)
+- 修正 config 設定
+=============================
+Version 2.2.1 (20230505-3da06c7)
+- Mapping AP 健康監控API
+- 改用 jasypt
+- 修正 CVN 加解密AES
+=============================
+Version 2.2.0 (20230427-d302ef1)
+- MappingAP FIDOAP整合iDenKey
+=============================
+Version 2.1.2 (20230413-708c35f)
+
+- Change groupId
+
+=============================
+Version 2.1.1 (20230413-f694a05)
+
+- 移識別資訊
+
+=============================
+Version 2.1.0 (20230411-a947409)
+
+- Convert to Spring Boot
+
+=============================
+Version 0.4.3 (20230329-0922193)
+
+- Ignore push error
+- Correct descriptions
+
+=============================
+Version 0.4.2 (20230327-046d0af)
+
+- Removed oneClick field handling on our side
+
+=============================
+Version 0.4.1 (20230322-c81723d)
+
+- Adjust svfSendRegResponse to deregister on our side first before send request to FIDO
+- Add FIDO deregister process when user is asking for replace or replace all iDGateIDs in svfSendRegResponse
+
+=============================
+Version 0.4.0 (20230321-4b6272c)
+
+- Will reply fail counter whenever the M002 is showed in SvfSendAuthResponse, SvfOfflineOTPResponse, and SvfCheckSetting
+- Update log4j config
+
+=============================
+Version 0.4.0 (20230321-0bfa264)
+
+- Modified channelVO and DAO since we doesn't need two offline otp limits
+- Simplified limit conditions in SvfSendAuthResponse, SvfOfflineOTPResponse, and SvfCheckSetting
+
+=============================
+Version 0.4.0 (20230321-ddf490d)
+
+- Add Gson4Common_w_Failcount for case that need to reply fail counter
+- Will reply fail counter when the situation going into member locked case in SvfSendAuthResponse, SvfOfflineOTPResponse, and SvfCheckSetting
+- Will reply oneClick field in failCount in svGetDeviceStatus
+- Add debug logging points
+
+=============================
+Version 0.3.9 (20230320-4abc9d5)
+
+- Will reply member locked error code when user have reached validation threshold
+
+=============================
+Version 0.3.8 (20230316-cfe172a)
+
+- Allow body field to be null or not given
+
+=============================
+Version 0.3.7 (20230315-4944d11)
+
+- Add handling for case that clickAction field isn't included in msg
+
+=============================
+Version 0.3.7 (20230315-0d4d705)
+
+- Fixed an bug that caused push won't be triggered
+- Allow to put Base64 string into txnTitle
+
+=============================
+Version 0.3.6 (20230313-0e67016)
+
+- 修改 svfOfflineOTPRequest 的回傳值
+- Will send both title, body, and clickAction field to push server
+- Add new filters for body and clickAction variable
+
+=============================
+Version 0.3.5 (20230310-1d18105)
+
+- Will extend FIDO return code to 5 digit. Errors will starts with F
+- Useless codes removed
+
+=============================
+Version 0.3.5 (20230310-add9cb2)
+
+- Fixed a bug that cause filter works incorrectly
+- Simplified some regex
+
+=============================
+Version 0.3.4 (20230306-e3ff910)
+
+- Adjust error code
+
+=============================
+Version 0.3.3 (20230305-cd2c427)
+
+- Add M letter into first spot of error codes
+- Update M0200 error msg
+
+=============================
+Version 0.3.2 (20230223-5a6d911)
+
+- Will block user to get auth request if its request verify type isn't match to the record
+- Add new error code and msg
+
+=============================
+Version 0.3.1 (20230221-8cd5f40)
+
+- Add time of register and modify into device status response
+- Add time formatter into svGetDeviceStatus class
+
+=============================
+Version 0.3.0 (20230220-91befab)
+
+- Add new member table func for status update at once under same device id
+- Will lock all member account under same device id when their fail counter reached limit
+
+=============================
+Version 0.3.0 (20230220-906961b)
+
+- Implement quick login auth failed cases
+
+=============================
+Version 0.3.0 (20230220-ccaf2e9)
+
+- Handle unsupported charset exceptions
+- Update algorithm used by simple otp
+
+=============================
+Version 0.2.9 (20230217-302a7c6)
+
+- Fixed some possible resource leaks
+- Will catch number format exception
+
+=============================
+Version 0.2.9 (20230217-a76dbfa)
+
+- Change table names and fields to upper case
+- Minor code improvement
+- Update log config to log4j2.xml
+
+=============================
+Version 0.2.8 (20230214-da63cb8)
+
+- Add log4j jul lib
+
+=============================
+Version 0.2.8 (20230214-ab156a4)
+
+- Update txn title filter
+
+=============================
+Version 0.2.8 (20230214-1071ff4)
+
+- Removed redundant value in members dao
+- Unreachable condition in check parameters removed
+- Add throw exception and value casting to ECCUtil
+
+=============================
+Version 0.2.8 (20230214-3cd73ed)
+
+- Fixed some possible resource leak by opening file
+
+=============================
+Version 0.2.8 (20230214-3e89160)
+
+- Adjust variables declaration
+- Update true or false string with constant
+- Useless codes removed
+
+=============================
+Version 0.2.8 (20230214-0742f76)
+
+- Update txn title filter
+
+=============================
+Version 0.2.7 (20230213-e170219)
+
+- Update txn title filter
+- Useless codes removed
+
+=============================
+Version 0.2.6 (20230208-7271b37)
+
+- Adjust bank txn id min length limit
+
+=============================
+Version 0.2.5 (20230207-c33e90c)
+
+- Fixed the null point issues
+- Useless codes removed
+
+=============================
+Version 0.2.5 (20230207-1d58629)
+
+- Add log points for case of return msg error debugging
+- Fixed some WSI api that is using incorrect api key
+- Fixed some incorrect error cases 
+
+=============================
+Version 0.2.5 (20230207-41f0c16)
+
+- Add new parameters into get txn list api
+
+=============================
+Version 0.2.5 (20230207-5e3aa8c)
+
+- Will reply different error code when system received invalid response from the other system
+- Will not check if the channel matches to the registration channel on Cancel/Get Auth apis
+- Update error code 0016 meaning for push sv error
+- Removed encGetTxnListData from svfGetTxnList
+- Useless codes removed
+
+=============================
+Version 0.2.4 (20230207-97d4c20)
+
+- Fix encoding bug
+
+=============================
+Version 0.2.3 (20230131-bee52e2)
+
+- Update return code and msgs
+
+=============================
+Version 0.2.3 (20230131-8d9b0de)
+
+- Will send api key to fido sv
+
+=============================
+Version 0.2.3 (20230131-1071894)
+
+- Adjust device os version variable fetch naming
+- Update to log4j 2.19.0
+
+=============================
+Version 0.2.2 (20230118-5cad74c)
+
+- Will create a new device id if replace mode is set to replace all
+
+=============================
+Version 0.2.2 (20230118-1e3e0fc)
+
+- Adjust device ID generation logic
+
+=============================
+Version 0.2.2 (20230118-6fddef1)
+
+- Add device os version field into device status reply msg
+- Remove fido member status field from device status reply msg
+- Fixed a bug that didn't reply correct msg from cancel auth api
+
+=============================
+Version 0.2.1 (20230117-f92be6a)
+
+- Update transaction id acceptance range
+
+=============================
+Version 0.2.0 (20230116-40e1d9b)
+
+- Will reply device id and type from reg response api if registration is succeed
+
+=============================
+Version 0.1.9 (20230111-f15c2d1)
+
+- Will reset fail counter when the validation is succeed
+
+=============================
+Version 0.1.9 (20230111-e22bb50)
+
+- Adjust naming of txnData to bankTxnData
+
+=============================
+Version 0.1.9 (20230111-4c0a75c)
+
+- Fixed bugs of variable naming
+
+=============================
+Version 0.1.9 (20230111-7c82234)
+
+- Fixed a bug that can't recognize txnData
+
+=============================
+Version 0.1.9 (20230111-c6a279b)
+
+- Adjust naming of txnData to bankTxnData
+
+=============================
+Version 0.1.8 (20230110-98fdab1)
+
+- Will send idgateID to push SV for recording
+
+=============================
+Version 0.1.7 (20230109-0ceba6e)
+
+- Will reply verify type while getting device status
+
+=============================
+Version 0.1.7 (20230109-ce2596e)
+
+- Will block offline member account to use auth request/response function
+
+=============================
+Version 0.1.6 (20230105-d1423b2)
+
+- Add missed return param in findByPrimaryKey
+- Simplified updatePushID funcation input param
+- Fixed a mistery bug that should reply SQL param type incorrect error during runtime but no error instead
+
+=============================
+Version 0.1.5 (20230104-a7f931d)
+
+- Add trace logs
+
+=============================
+Version 0.1.5 (20230104-33a971d)
+
+- Fixed a bug of null pointer handling
+
+=============================
+Version 0.1.5 (20230104-4c1d4e1)
+
+- Fixed a bug that push server can't recognize data due to content type
+- Fixed some bugs that sent wrong variable name to push server
+- Add push token check
+- Add trace log
+
+=============================
+Version 0.1.5 (20230104-ef2152b)
+
+- Fixed a bug on push variable filter
+
+=============================
+Version 0.1.5 (20230104-953f29f)
+
+- Fix the gson concurrent modification exception by not using the static declaration
+
+=============================
+Version 0.1.5 (20230104-a9d03dd)
+
+- Adjust encTxnID fetch logic
+- Will log response for debugging
+
+=============================
+Version 0.1.5 (20230104-56f7609)
+
+- Adjust deregister logic to handle verifyType=0 separately
+
+=============================
+Version 0.1.5 (20230104-84571a8)
+
+- Fixed a bug in regex
+
+=============================
+Version 0.1.5 (20230104-43a360c)
+
+- Add more logs
+
+=============================
+Version 0.1.4 (20230103-b55b9fb)
+
+- Add push variable to determine that it should do PUSH to client or not
+- Add send as HTTP FORM mechanism
+
+=============================
+Version 0.1.4 (20230103-a18a2ac)
+
+- Fixed a bug that didn't recognize pushToken on WSI API
+
+=============================
+Version 0.1.3 (20221229-cd50b28)
+
+- Code improvement
+
+=============================
+Version 0.1.3 (20221229-f8b0554)
+
+- Fixed a bug of verifyType regex
+- Fixed a bug of otp naming
+
+=============================
+Version 0.1.3 (20221229-d7d78ab)
+
+- Adjust svDeRegist to accept list of idgateID, and allow to disable one or all of them by verify type
+- Moved FIDO deregister api call into SimpleFidoFunc
+- Code improvement
+
+=============================
+Version 0.1.3 (20221229-3fb1e48)
+
+- Will block accounts that are not for offline verification to create qr code
+
+=============================
+Version 0.1.3 (20221229-527934f)
+
+- Update account lock mechanism
+
+=============================
+Version 0.1.3 (20221229-5a6ff75)
+
+- Add member existing check before add new idgateID into DB
+
+=============================
+Version 0.1.2 (20221228-8e73881)
+
+- Update return code and msg
+- Update verify type mapping
+- Add new check parameter to WSI filter
+- Update verify type variable check to WSI filter
+
+=============================
+Version 0.1.1 (20221228-0acaf23)
+
+- Fixed a bug that didn't receive data
+- Code improvement
+
+=============================
+Version 0.1.0 (20221227-965a10f)
+
+- Update verify type name
+- Add SimpleFidoFunc class
+- Update SvfCheckSetting logic to lock member if it failed too many times
+- Update SvfSendAuthResponse logic to lock member if it failed too many times
+- Update SvfOfflineOTPResponse logic to lock member if it failed too many times
+
+=============================
+Version 0.1.0 (20221227-b6c1257)
+
+- Update verify type list 
+
+=============================
+Version 0.1.0 (20221227-c912426)
+
+- Useless codes removed
+
+=============================
+Version 0.1.0 (20221227-00c71e6)
+
+- Code improvement
+- Will reply different error code if member status is different
+
+=============================
+Version 0.1.0 (20221227-a586e64)
+
+- Improve health check performance
+
+=============================
+Version 0.1.0 (20221227-22a5275)
+
+- Code improvement
+
+=============================
+Version 0.1.0 (20221227-7ca7a90)
+
+- Add logging points
+
+=============================
+Version 0.1.0 (20221227-7ca7a90)
+
+- Add svCancelAuth api
+- Update default config
+
+=============================
+Version 0.1.0 (20221227-ccafcdd)
+
+- Add svGetAuthStatus api
+
+=============================
+Version 0.1.0 (20221227-d61e5d8)
+
+- Add svUpdatePushToken api
+
+=============================
+Version 0.1.0 (20221227-2474983)
+
+- Fixed a bug that doesn't recognize txnTitle variable
+- Change name of pushID to pushToken
+
+=============================
+Version 0.0.9 (20221223-05017bc)
+
+- Update Channel DAO field and table name
+- Update Device detail DAO table name
+- Update Members DAO table name
+- Useless codes removed
+
+=============================
+Version 0.0.9 (20221223-a61c91d)
+
+- Update SQLs in Channel DAO
+- Update Channel DAO to use upper case
+- Update Channel DAO with new fields
+- Useless codes removed
+
+=============================
+Version 0.0.8 (20221222-1e92a91)
+
+- Update SvfOfflineOTPResponse logic
+
+=============================
+Version 0.0.8 (20221222-ffc82fe)
+
+- Update SvfGetToken logic
+
+=============================
+Version 0.0.8 (20221222-3a669c1)
+
+- Adjust log msg
+
+=============================
+Version 0.0.8 (20221222-ed37d3f)
+
+- Update SvfOfflineOTPRequest logic
+
+=============================
+Version 0.0.8 (20221222-47ba500)
+
+- Update variable check conditions
+
+=============================
+Version 0.0.8 (20221222-3187bee)
+
+- Adjust reply form from svGetDeviceStatus
+
+=============================
+Version 0.0.7 (20221221-5b71474)
+
+- Add log
+
+=============================
+Version 0.0.7 (20221221-7fe1b2f)
+
+- Add svGetDeviceStatus api
+
+=============================
+Version 0.0.7 (20221221-f591cd7)
+
+- Add svDeRegister api
+
+=============================
+Version 0.0.7 (20221221-f2f1157)
+
+- Add svUnlockDevice api
+
+=============================
+Version 0.0.7 (20221221-00af5f1)
+
+- Add logging point into svHealthCheck
+
+=============================
+Version 0.0.7 (20221221-83fd343)
+
+- Update SQLs
+
+=============================
+Version 0.0.7 (20221221-5f9eee2)
+
+- Update svLockDevice logic
+
+=============================
+Version 0.0.7 (20221221-7bcfa9f)
+
+- Add svLockDevice api
+
+=============================
+Version 0.0.7 (20221221-394dabf)
+
+- Add svHealthCheck api
+- Update check conditions
+
+=============================
+Version 0.0.7 (20221221-0407558)
+
+- Add logging point
+
+=============================
+Version 0.0.7 (20221221-a63bde0)
+
+- Fixed a bug that sent incorrect data form to FIDO in svGetDeviceStatus
+- Record verifyType that is received in SvfGetAuthRequest
+
+=============================
+Version 0.0.6 (20221220-ea9c616)
+
+- Add new authTypeRequest for authType check in SvfGetAuthRequest
+- Misplaced check condition restored
+
+=============================
+Version 0.0.6 (20221220-03a6990)
+
+- Fixed a bug that didn't accept encCancelAuthData
+
+=============================
+Version 0.0.6 (20221220-9483817)
+
+- Fixed a bug that didn't accept bankTxnID
+
+=============================
+Version 0.0.6 (20221220-6799579)
+
+- Add log points into WSM servlets
+
+=============================
+Version 0.0.6 (20221220-6799579)
+
+- Update svfGetTxnList logic
+
+=============================
+Version 0.0.6 (20221220-cd0a741)
+
+- Add new variable check conditions
+- Update svfSetAuthType logic
+
+=============================
+Version 0.0.6 (20221220-772e388)
+
+- Update svfGetTxnData logic
+
+=============================
+Version 0.0.6 (20221220-29fee0c)
+
+- Update SvfCheckSetting logic
+- Add new variable check conditions
+
+=============================
+Version 0.0.6 (20221220-75bdfd9)
+
+- Add log point if there is error on FIDO connection
+
+=============================
+Version 0.0.6 (20221220-715779b)
+
+- Update SvfChangeSetting logic
+- Add new variable check conditions
+
+=============================
+Version 0.0.6 (20221220-b8cd5c1)
+
+- Correct typos
+
+=============================
+Version 0.0.6 (20221220-df494c1)
+
+- Update SvfCancelAuth send to fido logic
+
+=============================
+Version 0.0.6 (20221220-04fd9c1)
+
+- Code improvement
+
+=============================
+Version 0.0.6 (20221220-441ba28)
+
+- Simplified VOs with lombok getter and setter
+
+=============================
+Version 0.0.6 (20221220-e13a9b5)
+
+- Code improvement
+
+=============================
+Version 0.0.6 (20221220-c498d5c)
+
+- Patch up a bug that is using incorrect data form to send data to FIDO in multiple servlet
+
+=============================
+Version 0.0.5 (20221219-322e11c)
+
+- Add keyType check condition
+
+=============================
+Version 0.0.5 (20221219-9549d56)
+
+- Allow to use authType 0
+
+=============================
+Version 0.0.5 (20221219-10d3308)
+
+- Simplified MembersVO with lombok getter and setter
+- Fixed a bug that didn't fetch data on replace=2 block
+- Add null checks
+
+=============================
+Version 0.0.4 (20221215-327b46b)
+
+- Update WSI to provide functions that are related to the FIDO SV
+- Update 2 WSM template APIs
+
+=============================
+Version 0.0.4 (20221215-99a2d14)
+
+- Update return code variable name
+
+=============================
+Version 0.0.4 (20221215-3cd73ad)
+
+- Minor code refactoring to DAOs
+
+=============================
+Version 0.0.4 (20221215-a64b5e4)
+
+- Minor code improvement of Send2Remote
+- Use lombok to simplify return msg classes
+
+=============================
+Version 0.0.3 (20221214-d18dd68)
+
+- Fixed a bug of getting incorrect field
+
+=============================
+Version 0.0.3 (20221214-d5d3d0d)
+
+- Fixed a bug while checking idgateIDs for same verify type
+
+=============================
+Version 0.0.3 (20221214-7865943)
+
+- Add check condition of encDeregData
+
+=============================
+Version 0.0.3 (20221214-d9269fe)
+
+- Update SvfSendDeregResponse logic
+- Add disableOneMemberID func to members DAO
+- Update log text in SvfSendRegResponse
+
+=============================
+Version 0.0.3 (20221214-ee200fc)
+
+- Fixed a bug in insert SQL
+
+=============================
+Version 0.0.3 (20221214-750b3cd)
+
+- Remove unspecified fields from SvfGetAuthRequest
+- Comment unused value in SvfCancelAuth
+
+=============================
+Version 0.0.3 (20221214-c9aaba9)
+
+- Update check condition for deviceInfo
+- Update SvfSendRegResponse logic
+
+=============================
+Version 0.0.3 (20221214-c2114a5)
+
+- Update members DAO to fit the need
+
+=============================
+Version 0.0.3 (20221214-5789d1b)
+
+- Update device detail DAO to fit the need
+
+=============================
+Version 0.0.3 (20221214-40c12f0)
+
+- Update return code table
+
+=============================
+Version 0.0.2 (20221209-98dcc17)
+
+- Update SvfCancelAuth logic
+- Update SvfGetAuthRequest logic
+- Update SvfSendAuthResponse logic
+
+=============================
+Version 0.0.2 (20221209-1ed5500)
+
+- Update SvfGetRegRequest logic
+- Update SvfSendRegResponse logic
+
+=============================
+Version 0.0.2 (20221209-c910398)
+
+- Update SvfGetPubKeyNTime logic
+
+=============================
+Version 0.0.2 (20221209-62f05aa)
+
+- Update templates
+- Update return codes
+
+=============================
+Version 0.0.2 (20221209-0a2639e)
+
+- Add mutex control into ECCUtil
+- Update ECIES test case
+
+=============================
+Version 0.0.2 (20221209-3960d38)
+
+- Update members DAO objects to fit the need
+- Update channel DAO objects to fit the need
+- Move common values to BaseServlet
+
+=============================
+Version 0.0.2 (20221209-eac85fa)
+
+- Update variable check table
+- Update Send2Remote and Send2PushServer with pooling
+- Update default configs
+
+=============================
+Version 0.0.1 (20221122-cd326d0)
+
+- Init version for COM FIDO

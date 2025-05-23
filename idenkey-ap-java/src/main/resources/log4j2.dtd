@@ -1,0 +1,46 @@
+<!ELEMENT Configuration (Properties,Appenders,Loggers)>
+<!ATTLIST Configuration status NMTOKEN #REQUIRED>
+<!ATTLIST Configuration monitorInterval NMTOKEN #REQUIRED>
+<!ELEMENT Properties (Property+)>
+<!ELEMENT Property (#PCDATA)>
+<!ATTLIST Property name NMTOKEN #REQUIRED>
+<!ELEMENT Appenders (RollingFile+,Console)>
+<!ELEMENT RollingFile (PatternLayout,Policies,DefaultRolloverStrategy)>
+<!ATTLIST RollingFile name NMTOKEN #REQUIRED>
+<!ATTLIST RollingFile fileName CDATA #REQUIRED>
+<!ATTLIST RollingFile filePattern CDATA #REQUIRED>
+<!ELEMENT PatternLayout (pattern?)>
+<!ATTLIST PatternLayout pattern CDATA #IMPLIED>
+<!ATTLIST PatternLayout disableAnsi NMTOKEN #IMPLIED>
+<!ATTLIST PatternLayout noConsoleNoAnsi NMTOKEN #IMPLIED>
+<!ELEMENT pattern (#PCDATA)>
+<!ELEMENT Policies (TimeBasedTriggeringPolicy,SizeBasedTriggeringPolicy)>
+<!ELEMENT TimeBasedTriggeringPolicy EMPTY>
+<!ATTLIST TimeBasedTriggeringPolicy interval NMTOKEN #REQUIRED>
+<!ATTLIST TimeBasedTriggeringPolicy modulate NMTOKEN #REQUIRED>
+<!ELEMENT SizeBasedTriggeringPolicy EMPTY>
+<!ATTLIST SizeBasedTriggeringPolicy size CDATA #REQUIRED>
+<!ELEMENT DefaultRolloverStrategy (Delete)>
+<!ATTLIST DefaultRolloverStrategy max NMTOKEN #REQUIRED>
+<!ELEMENT Delete (IfFileName,IfLastModified)>
+<!ATTLIST Delete basePath CDATA #REQUIRED>
+<!ATTLIST Delete maxDepth NMTOKEN #REQUIRED>
+<!ELEMENT IfFileName EMPTY>
+<!ATTLIST IfFileName glob CDATA #REQUIRED>
+<!ELEMENT IfLastModified EMPTY>
+<!ATTLIST IfLastModified age NMTOKEN #REQUIRED>
+<!ELEMENT Console (PatternLayout)>
+<!ATTLIST Console name NMTOKEN #REQUIRED>
+<!ATTLIST Console target NMTOKEN #REQUIRED>
+<!ELEMENT Loggers (Logger+,Root)>
+<!ELEMENT Logger (appender-ref)>
+<!ATTLIST Logger name NMTOKEN #REQUIRED>
+<!ATTLIST Logger additivity NMTOKEN #REQUIRED>
+<!ELEMENT appender-ref EMPTY>
+<!ATTLIST appender-ref ref NMTOKEN #REQUIRED>
+<!ATTLIST appender-ref level NMTOKEN #REQUIRED>
+<!ELEMENT Root (AppenderRef)>
+<!ATTLIST Root level NMTOKEN #REQUIRED>
+<!ELEMENT AppenderRef EMPTY>
+<!ATTLIST AppenderRef ref NMTOKEN #REQUIRED>
+<!ATTLIST AppenderRef level NMTOKEN #REQUIRED>

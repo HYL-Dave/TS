@@ -1,0 +1,72 @@
+{"properties": [
+  {
+    "name": "test_mode",
+    "type": "java.lang.Boolean",
+    "description": "test_mode = true (不檢核 step 4, step 5 ; default = false)"
+  },
+  {
+    "name": "test_mode_hint",
+    "type": "java.lang.String",
+    "description": "預設 test_mode_hint 為空字串(test_mode = true 時才顯示在 log file 內"
+  },
+  {
+    "name": "use_swagger",
+    "type": "java.lang.Boolean",
+    "description": "use_swagger = true (啟用 | false 停用)"
+  },
+  {
+    "name": "config_directory",
+    "type": "java.lang.String",
+    "description": "另一外部設定目錄 prefix"
+  },
+  {
+    "name": "config_file_path",
+    "type": "java.lang.String",
+    "description": "另一外部設定路徑"
+  },
+  {
+    "name": "err_msg_path",
+    "type": "java.lang.String",
+    "description": "message 路徑"
+  },
+  {
+    "name": "database_type",
+    "type": "java.lang.String",
+    "description": "資料庫類型如 MSSQL 或 MySQL"
+  },
+  {
+    "name": "Component-A",
+    "type": "java.lang.String",
+    "description": "A description for 'Component-A'"
+  },
+  {
+    "name": "Component-B",
+    "type": "java.lang.String",
+    "description": "A description for 'Component-B'"
+  },
+  {
+    "name": "Component-C",
+    "type": "java.lang.String",
+    "description": "A description for 'Component-C'"
+  },
+  {
+    "name": "server_data_timeout",
+    "type": "java.lang.Integer",
+    "description": "FIDO 簽章驗證時效"
+  },
+  {
+    "name": "log4j_file_path",
+    "type": "java.lang.String",
+    "description": "log file 路徑"
+  },
+  {
+    "name": "app-ID",
+    "type": "java.lang.String",
+    "description": "A description for 'app-ID'"
+  },
+  {
+    "name": "Allowed-Aaids",
+    "type": "java.lang.String",
+    "description": "A description for 'Allowed-Aaids'"
+  }
+]}

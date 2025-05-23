@@ -1,0 +1,290 @@
+---------------------------
+version 2.2.2 (20230720-)
+- 增加ECDH加解密API
+- 清理部分comment
+- 更新Trust server jar
+---------------------------
+version 2.2.1 (20230628-7796656)
+- 修正重複性紀錄
+---------------------------
+version 2.2.0 (20230627-fe53b9a) 
+- Tune fields
+- Fixed bug(new user id)
+---------------------------
+version 2.1.27 (20230614-8b24f5c) 
+- 依 SonarQube 修改
+---------------------------
+version 2.1.26 (20230606-7d135c3) 
+- Remove redundancy
+---------------------------
+version 2.1.25 (20230524-3cdb7ed)
+- 移無用的 dependency
+---------------------------
+version 2.1.24 (20230524-18ce083)
+- 修正 [問題]Idenkey 2.1.8_重複設定人臉/圖形鎖/動態密碼最後會出現資料庫錯誤
+---------------------------
+version 2.1.23 (20230517-ad31259)
+- 設定參數名稱更名
+---------------------------
+version 2.1.22 (20230515-124df6e)
+- 修正 [問題]Idenkey 2.1.8_重複設定人臉/圖形鎖/動態密碼最後會出現資料庫錯誤
+---------------------------
+version 2.1.21 (20230509-d98ffa5)
+- 修正 黑名單 authType = ALL(包含交易等全部時機) 
+- Use fido-uaf 2.0.9
+---------------------------
+version 2.1.20 (20230505-0eed68f)
+- 修正 回應代碼
+- 加回應代碼 2310
+---------------------------
+version 2.1.19 (20230504-79e7cc0)
+- 修正 黑名單裝置未阻擋註冊
+- 修正 待驗證交易不會擋，驗證時才會擋
+---------------------------
+version 2.1.18 (20230502-2a1b492)
+- 修正輸入參數檢核
+- 修正 groupId
+---------------------------
+version 2.1.17 (20230420-f1fdc6e)
+- Fix bug( base64
+---------------------------
+version 2.1.16 (20230330-e876082)
+- 改設定檔路徑
+- 修正 apache.logging
+- Set version to 2.1.16
+---------------------------
+version 2.1.15 (20230328-5fcf264)
+- 修正 svfOfflineOTPResponse 沒有阻擋已經驗證成功過的OTP 再次驗證
+- svGetDeviceStatus增加回覆oneClick, deviceOSVer..
+- Set version to 2.1.15
+---------------------------
+version 2.1.14 (20230327-1374ce2)
+- svfGetPubKeyNTime增加回覆serverECCPubKey
+- FIDO簽章驗證錯誤也要記錄錯誤次數+1在Members.Auth_Fails
+- Set version to 2.1.14
+---------------------------
+version 2.1.13 (20230322-8a66489)
+- 驗證交易超過時限(5分鐘)，回應逾時 04
+- 重編 FIDO 回應代碼
+- Set version to 2.1.13
+---------------------------
+version 2.1.12 (20230316-9d28d19)
+- Fix bug (update_TxnStatus 回傳 500
+- Set version to 2.1.12
+---------------------------
+version 2.1.11 (20230316-cef3559)
+- svfSignup_Device 回傳值encRegResult內 增加authType、authHash
+- 加 SvfOfflineOTPResponse 驗證成功, 交易狀態修改為00
+- Set version to 2.1.11
+---------------------------
+version 2.1.10 (20230315-32a5f03)
+- encRegRes 增加 idgateIDECCPubKey
+- encRegResult 增加 authType、authHash
+- txnTitle 可為 Base64
+- Set version to 2.1.10
+---------------------------
+version 2.1.9 (20230313-77fe862)
+- Fix bug(svfSetAuthType 密碼鎖
+- 加 DataBaseType=MySQL
+- 驗證API增加參數，讓Client端帶入OS版本
+- 修改 svfOfflineOTPRequest 的回傳值
+- Set version to 2.1.9
+---------------------------
+version 2.1.8 (20230309-849a3c8)
+- Fix bug(svfSetAuthType 加檢查圖形鎖與密碼鎖與上次相同
+- log4j2.xml(zip->log)
+- Set version to 2.1.8
+---------------------------
+version 2.1.7 (20230307-83786d6)
+- 修正 SvfOfflineRequest會有錯誤的log出現HTTP500  
+- svfSetAuthType 加檢查圖形鎖與密碼鎖與上次相同
+- 修正 回應代碼表
+- Set version to 2.1.7
+---------------------------
+version 2.1.6 (20230301-7f999f5)
+- 修正 OfflienOTP (txnTitle 可為 Json  
+- svfGetTxnData 加 title
+- 通訊加密使用的key改回RSA
+- 修正後蓋前邏輯(呼叫svfSetAuthType 多次會出現 資料庫錯誤
+- Set version to 2.1.6
+---------------------------
+version 2.1.5 (20230222-343c19d)
+- 修改 通訊加密使用的key改為ECC key pair
+- 移除 printStackTrace
+- 修正 Log4j2 外部設定
+- Set version to 2.1.5
+---------------------------
+version 2.1.4 (20230220-45f3983)
+1. 通訊加密使用的key改為ECC key pair
+2. Set version to 2.1.4
+---------------------------
+version 2.1.3 (20230220-cab021c)
+1. svfSignup_Device 加上註冊時檢查黑名單
+2. 加 0960 到回應代碼表
+3. Set version to 2.1.3
+---------------------------
+version 2.1.2 (20230217-7e37e36)
+1. OTP 錯誤達上限鎖定
+2. 整理程式碼
+3. Set version to 2.1.2
+---------------------------
+version 2.1.1 (20230216-a2f59b2)
+1. 更新回應代碼表
+2. SQL script 改大寫
+3. Set version to 2.1.1
+---------------------------
+version 2.1.0 (20230215-4533558)
+1. 合併 TrustServer
+2. Set version to 2.1.0
+---------------------------
+version 2.0.10 (20230215-79af82d)
+1. push的檢核先拿掉
+2. Set version to 2.0.10
+---------------------------
+version 2.0.9 (20230215-b055079)
+1. 黑名單的SQL 不分大小寫
+2. svfGetTxnData 回應參數增加authStatus
+3. 調整 SQL 分大小寫
+4. Set version to 2.0.9
+---------------------------
+version 2.0.8 (20230210-b14a954)
+1. 校對 RetrunCode
+2. 整理程式碼(加 try catch
+3. svGetAuthStatus, svfGetTxnList不檢查01
+4. txnID、title第一個字母改為小寫
+5. txnTitle 300個字除了不能用分隔符號 | 
+6. Set version to 2.0.8
+---------------------------
+version 2.0.7 (20230208-5966b02)
+1. 支援跨區驗證(改為 vrVO.getChannel_Code
+2. Fix Bug(驗證成功 Status_code 更新為00
+3. 實作API Key
+4. Fix bug(ADD count++
+5. 整理程式碼(取出共用 Constant
+6. svfGetTxnList subtitle改createTime
+7. 修正OutputHandler (回傳訊息尾部有換行符號
+8. Set version to 2.0.7
+---------------------------
+version 2.0.6 (20230201-8c85051)
+1. FIDO server要吃JBoss JNDI
+2. 移重複的註解
+3. 註冊時檢查黑名單
+4. Set version to 2.0.6
+---------------------------
+version 2.0.5 (20230117-6cd212c)
+1. Fix FIDO log
+2. RP可透過參數設定時間
+3. Set version to 2.0.5
+---------------------------
+version 2.0.4 (20230117-7e49e83)
+1. Fix verification 0f transationID
+2. Set version to 2.0.4
+---------------------------
+version 2.0.3 (20230113-eaf0b3e)
+1. 改檢核碼為AES()加密後的字串取“後“16碼
+2. 修改 svfGetTxnList 回應參數txnList，及輸入參數增加days, number
+3. svfSetAuthType可以後蓋前
+4. 整理程式碼(移無用的註解
+5. Set version to 2.0.3
+---------------------------
+version 2.0.2 (20230111-)
+1. 改 SafeNet 直連 HSM (改用 HSM_PXD, HSM_SLOT
+2. Fix bug (Add oldStatus
+3. Fix "DbKeyAlias"
+4. 加 svUnlockDevice, svfGetTxnData, svGetAuthStatus, svCancelAuth, svDeRegister_St
+5. txnData格式符合coding style，並改名bankTxnData
+6. svfGetTxnData回應要增加txnID
+7. Set version to 2.0.2
+---------------------------
+version 2.0.1 (20221228-c2d080c)
+1. 加 SafeNet 直連 HSM 加解密 (加 ErrorCode 0018
+2. 開發TS對外API createAESKey
+3. 加 useSwagger
+4. 加 SK 開發的 svfGetToken 等 3 支
+5. Set version to 2.0.1
+---------------------------
+version 2.0.0 (20221216-36691f3)
+1. 整合 FIDO
+2. JAR 2 WAR
+3. checkout CHB_RPnFIDO
+4. Set version to 2.0.0
+---------------------------
+version 1.1.6 (20221209-c8a1474)
+1. 移機敏訊息
+2. Set version to 1.1.6
+---------------------------
+version 1.1.5 (20221208-d4fb322)
+1. 可以跨channel驗證
+2. 修改 Health check
+3. Set version to 1.1.5
+---------------------------
+version 1.1.4 (20221208-9f76728)
+1. 併版
+2. Set version to 1.1.4
+---------------------------
+version 1.1.3 (20221208-886861c)
+1. 改用 openAPI 3
+2. 補 SQLLogFormat
+3. 拋 HSM 訊息
+4. Add Health check
+5. Add log4jAPforDebug
+6. 拿掉 OTP 的部份
+7. 修正 HSM 解密
+8. Set version to 1.1.3
+---------------------------
+version 1.1.2 (20221201-726cdcd)
+1. 增加svfSignupDevice
+2. 整合Trust server的jar和lib
+---------------------------
+version 1.1.1 (20221118-2b4da4f)
+1. userID去識別化
+2. Fix bug getDevice_Data
+3. Fix bug getChannel_Code
+4. Add TestModeHint
+5. Set version to 1.1.1
+---------------------------
+version 1.1.0 (20221116-621f508)
+1. 不用 switch (doSelect)
+2. 修正因DB帳密錯誤的500回應碼為 0008 資料庫錯誤
+3. 因註冊流程變更加檢核
+4. Fix ConcurrentModificationException
+5. remove FakeData
+6. Fix bug (TestMode)
+7. 更名下列欄位 (1.1.0)
+Members.Pxssword → Pcode
+Members.Email → Account
+Members.Mobile_Phone → Mobile_Name
+9. Fix bug Bank_ID
+10. Fix bug JPA
+11. Set version to 1.1.0
+---------------------------
+version 1.0.5 (20221111-9ea7de1)
+1. Change REG procedure
+2. Tune logException()
+3. Add svLockDevice()
+4. Set version to 1.0.5
+---------------------------
+version 1.0.4 (20221109-ff823ef)
+1. Add TestMode
+2. DB 設 DEFAULT_SCHEMA (Table不加 prefix -- fido)
+3. 加 0070 = 參數錯誤 (為了 step2, step4 前綴 enc 的參數
+4. Add logExecption to AP_Log
+5. Set version to 1.0.4
+---------------------------
+version 1.0.3 (20221103-4af7357)
+1.ALTER SCHEMA to fido
+2.upgrade commons-text to version 1.10.0
+3.只留 json 格式的 Log
+---------------------------
+version 1.0.2 (20221026-3f6ea74)
+1. remove Jasypt
+2. dataSource 遮罩改用 EncryptHelper.jar
+3. 修改 config.properties 內的 PB_AP => RP_AP
+4. 加解密私鑰改用 HSM 
+---------------------------
+version 1.0.1 (20221017-bd69fd1)
+修正 Lib 位置 
+---------------------------
+version 1.0.0 (20221017-0a92fce)
+1.移除多餘檔案
+2.修改路徑 basedirOfJAR For SIT  
